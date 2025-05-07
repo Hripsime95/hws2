@@ -3,9 +3,16 @@
 }
 
 .hw {
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border: 1px solid #ccc;
 }
 
 .hwTitle {
-
+    padding: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
 }
