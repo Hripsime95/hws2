@@ -1,8 +1,30 @@
-.burgerMenuIcon {
-}
-
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e9e9f0;
+  padding: 1rem 1.5rem;
+  height: 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Header title */
 .header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: #302d4d;
+}
+
+/* Burger menu icon (usually 3 lines stacked) */
+.burgerMenuIcon {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
