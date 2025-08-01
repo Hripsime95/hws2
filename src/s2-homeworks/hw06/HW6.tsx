@@ -13,13 +13,20 @@ import s from './HW6.module.css'
 
 const HW6 = () => {
     const [value, setValue] = useState<string>('')
+    const [ignoreBlur, setIgnoreBlur] = useState<boolean>(false)
 
     const save = () => {
+        if(ignoreBlur){
+            setIgnoreBlur(true)
+            return
+        }
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = () => {
-        // делают студенты
+        setIgnoreBlur(true)
 
+        const valueFromLS: string = restoreState<string>('hw6-editable-span-value', value)
+        setValue(valueFromLS)
     }
 
     return (
@@ -33,6 +40,8 @@ const HW6 = () => {
                         id={'hw6-spanable-input'}
                         value={value}
                         onChangeText={setValue}
+                        onEnter={save}
+                        onBlur={save}
                         spanProps={{
                             id: 'hw6-editable-span',
                             defaultText: 'enter text...',
