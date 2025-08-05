@@ -8,16 +8,28 @@
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: right;
+    
+    button{
+        margin: 5px;
+    }
 }
 
 .container {
+    max-width: 50%;
 }
 
 .thead {
+    background-color: aqua;
 }
 
 .nameCol {
+    width: 200px;
 }
 
 .ageCol {
+    width: 200px;
+    display: flex;
+    justify-content: center;
 }
