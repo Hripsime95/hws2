@@ -44,6 +44,13 @@ const HW13 = () => {
       })
       .catch((e) => {
         setCode(`Код ${e.response?.status}!`);
+        let img =
+          e.response?.status === 400
+            ? error400
+            : e.response?.status === 500
+            ? error500
+            : errorUnknown;
+        setImage(img);
         setText(e.response?.data?.errorText || e.name);
         setInfo(e.response?.data?.info || e.message);
         // дописать
