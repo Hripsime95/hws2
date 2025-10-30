@@ -48,9 +48,6 @@ const HW15 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [techs, setTechs] = useState<TechType[]>([]);
 
-  //console.log(sort);
-  console.log(searchParams);
-
   const sendQuery = (params: any) => {
     setLoading(true);
     getTechs(params)
@@ -58,6 +55,7 @@ const HW15 = () => {
         // делает студент
         // сохранить пришедшие данные
         if (res?.data.techs) setTechs(res.data.techs);
+        res?.data && setTotalCount(res.data.totalCount);
       })
       .finally(() => setLoading(false));
   };
